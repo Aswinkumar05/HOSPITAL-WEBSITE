@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Form</title>
+        <link rel="stylesheet" href="contact.css">
+        <style>
+            #icons
+            {
+                width: 25px;
+                height: 20px;
+            }
+        </style>
+        <script>
+            function query()
+            {
+                document.write("YOUR QUERY IS SUBMITTED SUCCESSFULLY.");
+            }
+        </script>
+         <script>
+            function validemail()
+                {
+                    var email2=document.myform.email1.value;
+                    var atposition=email2.indexOf("@");
+                    var dotposition=email2.lastIndexOf(".");
+                    if(atposition<1 || dotposition< atposition+2 || dotposition+2>=email2.length)
+                    {
+                        alert("please provide valid email");
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+        </script>
+        <script>
+            function validnumber()
+            {
+                var mnum=document.myform.number1.value;
+                if(mnum.length==10)
+                {
+                    return true;
+                }
+                else
+                {
+                    alert("Enter correct Mobile number");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="lightblue">
+        <div class="contact">
+            <form onsubmit="return validemail() && validnumber() && query() " name="myform">
+            <div class="row">
+                <div class="text-input">
+                    <input type="text" required id="name"><label for="name"><img src="https://www.logolynx.com/images/logolynx/4b/4beebce89d681837ba2f4105ce43afac.png" id="icons"> <span>Your Name</span> </label>
+                </div>
+                <div class="text-input">
+                    <input type="number" required id="number" name="number1"><label for="number"><img src="https://th.bing.com/th/id/OIP.sBQQvAEFPvGSn0JKejKP1QHaFv?w=211&h=180&c=7&o=5&dpr=1.25&pid=1.7" id="icons"> <span>Phone No.</span></label>
+                </div>
+            </div>
+                <div class="text-input">
+                    <input type="email" required id="email" name="email1"><label for="email"><img src="https://th.bing.com/th/id/OIP.Drm6nD4sJjhOW2k2MUU6AwHaHa?w=206&h=206&c=7&o=5&dpr=1.25&pid=1.7" id="icons">  <span>Email Id</span></label>
+                </div>
+                <div class="text-input">
+                    <textarea id="message" rows="8" required></textarea>
+                    <label for="message"><img src="https://th.bing.com/th/id/R.01dae149c00b0af14f0a0f94174c1fb4?rik=sD0ZxiVmNmyYaA&riu=http%3a%2f%2fblog.online-spellcheck.com%2fwp-content%2fuploads%2f2016%2f04%2fMessages-icon.png&ehk=9N9UbUYp1TQrG2SVSPnvNCg0TIfEB7vtVt9owXncg70%3d&risl=&pid=ImgRaw" id="icons"> <span>Your message</span></label>
+                </div>
+                <input type="submit" class="submit">
+            </form>
+        </div>
+        <a href="home.html" target="_self" id="home-btn"><h3><img src="https://img.icons8.com/material-two-tone/24/000000/home-page.png"/></h3></a>
+    </body>
+</html>

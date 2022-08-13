@@ -1,0 +1,32 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.hero{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: linear-gradient(rgba(0,0,0,0.7),red);
+}
+.form-box{
+	width: 800px;
+	height: 250px;
+	position: relative;
+	margin: 6% auto;
+	background: #fff;
+	padding: 2px;
+	overflow: hidden;
+}
+h1{
+	font-family: 'Times New Roman', Times, serif;
+	color: darkturquoise;
+	font-size: 40px;
+}
+h2
+{
+	font-family: 'Times New Roman', Times, serif;
+	color: darkturquoise;
+	font-size: 35px;
+}

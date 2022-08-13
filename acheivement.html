@@ -1,0 +1,441 @@
+<html>
+<head>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+              width: 20px;
+            }
+            
+            /* Track */
+            ::-webkit-scrollbar-track {
+              background: #e1c2f2; 
+            }
+             
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+              background: #828; 
+            }
+            
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+              background:rgb(41,58,58); 
+            }
+    
+    .tag
+{
+    height: 50px;
+    align-items: center;
+}
+body{
+  background-image: url("backg.jpg");
+  background-repeat: no-repeat;
+  height: 700px;
+  min-width: 100%;
+  position:absolute;
+  size: cover;  
+  overflow:scroll;
+}
+
+.content {
+  position: absolute;
+top: 200px;
+left: 170px;
+  background: rgb(0, 0, 0);
+  background: rgba(100, 99, 99, 0.5); 
+  color: #ffffff;
+  line-height: 27px;
+  font-size: 19px;
+  width: 100%;
+  padding: 27px;
+  
+  height: 550px;
+  width: 1100px;
+  font-style: italic;
+  
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  left: 250px;
+  width: 1000px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  width: 1000px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.container1{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 0 0 20px 0;
+}
+.footer-col{
+   width: 22%;
+   padding: 5px;
+}
+.footer-col h4{
+	font-size: 20px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+#home-btn
+
+{
+
+    padding-right: 20px;
+
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+.social-links img
+{
+    width: 40px;
+}
+
+</style>
+</head>
+<body>
+  <svg width="200" height="159" style="fill:rgb(201, 18, 18);float:left">
+
+    <rect x="20" y="30" width="170" height="125" style="fill: royalblue; stroke-width:3px; stroke:darkblue"></rect>
+
+    <rect x="65" y="3" width="80" height="25" style="fill: darkblue;"></rect>
+
+    <rect x="75" y="10" width="60" height="20" style="fill:rgb(160, 196, 243) ;"></rect>
+
+    <circle cx="105" cy="85" r="40" style="fill: white; stroke-width:3px; stroke:darkblue;"></circle>
+
+    <rect x="98" y="80" width="15" height="15" style="fill: red;"></rect>
+
+    <rect x="113" y="80" width="15" height="15" style="fill: red;"></rect>
+
+    <rect x="83" y="80" width="15" height="15" style="fill: red;"></rect>
+
+    <rect x="98" y="93" width="15" height="15" style="fill: red;"></rect>
+
+    <rect x="98" y="67" width="15" height="15" style="fill: red;"></rect>
+
+    <text x="63" y="148" fill="white" style="font-size: 25px;">SWACH</text>
+
+</svg>
+  
+  <hr><marquee style="color:darkred; font-size: 45px;font-family:Georgia, 'Times New Roman', Times, serif;" bgcolor="cornsilk" width="86.3%" float="right" scrollamount="8" height="60px">
+    ** STAY HOME STAY SAFE.<img src="https://th.bing.com/th/id/OIP.BWwE99KgTCekFGDpDxNw_gHaHa?w=171&h=180&c=7&o=5&dpr=1.25&pid=1.7" class="tag"> WEAR MASK. <img src="https://th.bing.com/th/id/OIP.hjcgyiviNJ4F9ezQb4CigwHaE1?w=277&h=181&c=7&o=5&dpr=1.25&pid=1.7" class="tag"> SANITIZE YOUR HANDS. <img src="https://th.bing.com/th/id/OIP.-Yqh6XUQh-I9aJGCIf4udQHaHa?w=206&h=205&c=7&o=5&dpr=1.25&pid=1.7" class="tag"> MAINTAIN SOCIAL DISTANCE<img src="https://th.bing.com/th/id/OIP.9oNSWxBfFbz23PZPJ-BfGQHaHa?w=183&h=183&c=7&o=5&dpr=1.25&pid=1.7" class="tag"> **
+   </marquee><hr>
+
+   <div class="content"><center> <br>
+    <dl><h3>
+        <dt>
+            <h1><u>ACHIEVEMENTS & STRENGTHS:</u></h1>
+        </dt><br><br>
+        <dd>
+            Patients at Swach Hospitals receive personalized care and treatment from doctors and staff who take time to get to know them. Here, under one umbrella are expert medical consultants, certified medical staff, skilled surgeons, state-of-the-art technology and facilities, as well as support groups, and social workers – all dedicated to treatment and recovery of the patients.<br>
+Above all, we are attentive to all the needs and comforts of the patient. We have an aggressive approach balancing our treatment strategies with careful monitoring of our patient’s overall health and well-being.<br>
+Drawing on the strength of our community setting, patients benefit from our focused, custom-made care. A greater level of personal attention is afforded to each patient, and their individual needs are met with much thought and careful consideration
+        </dd><br><br>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <h1 style="text-align:center; color:white ">OUR AWARDS</h1>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="award-1.png" style="width: 100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="award-2.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="award_doc.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="awards_1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="bestaward.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="global award.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="award-1.png" style="width:100%" onclick="currentSlide(1)" alt="Excellence Award and Experience Award For Patient's Safety">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="award-2.png" style="width:100%" onclick="currentSlide(2)" alt="Best Hospital in India by Times Of India and Best Corporate Munsipality Hospital by The Week">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="award_doc.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mr.Alfred Johnson With Best Doctor Of The Year 2018 Award">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="awards_1.jpg" style="width:100%" onclick="currentSlide(4)" alt="Orthopedic Awards">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="bestaward.jpg" style="width:100%" onclick="currentSlide(5)" alt="Top 25 Best Hospitals in India">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="global award.jpg" style="width:100%" onclick="currentSlide(6)" alt="Global Healthcare Awards 2021">
+    </div>
+  </div>
+</div>
+</div>
+    </body>
+    
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+    
+   
+        
+    <br>
+    <br>
+    <footer class="footer">
+      <div class="container1">
+          <div class="row">
+            <a href="home.html" target="_self" id="home-btn"><h3><img src="https://e7.pngegg.com/pngimages/22/547/png-clipart-white-and-orange-icon-oregon-service-home-icon-miscellaneous-angle-thumbnail.png" height="80"></h3></a>
+              <div class="footer-col">
+                  <h4>About us</h4>
+                  <ul>
+                      <li><a href="vision,mission.html">Vision and Mission</a></li>
+                      <li><a href="director.html">Directors message</a></li>
+                      <li><a href="acheivement.html">Achievements and strengths</a></li>
+                      <li><a href="accomplishments.html">Accomplishments</a></li>
+                      <li><a href="infrastucture.html">Infrastructure</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Departments</h4>
+                  <ul>
+                      <li><a href="cardiology.html">Cardiology</a></li>
+                      <li><a href="ent.html">E.N.T</a></li>
+                      <li><a href="neurology.html">Neurology</a></li>
+                      <li><a href="surgery.html">General Surgery</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Branches</h4>
+                  <ul>
+                      <li><a href="delhi.html">New Delhi</a></li>
+                      <li><a href="gujarat.html">Gujarat </a></li>
+                      <li><a href="ap.html">Andhra Pradesh</a></li>
+                      <li><a href="tn.html">Tamil Nadu</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>follow us</h4>
+                  <div class="social-links">
+                      <a href="https://www.facebook.com/" target="blank"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
+                      <a href="https://twitter.com/?lang=en" target="blank"><img src="https://seeklogo.com/images/T/twitter-icon-circle-blue-logo-0902F48837-seeklogo.com.png"></a>
+                      <a href="https://www.google.com/" target="blank"><img src="https://tehnoblog.org/wp-content/uploads/2021/06/Google-Logo.png"></a>
+                      <a href="https://www.instagram.com/?hl=en" target="blank"><img src="https://pngfree.io/upload/cache/upload/imgs/lovepikHome/instagram-icon-instagram-logo-f350x650.png"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+ </footer>
+
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In Page</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body onload="login()">
+        <div class="hero">
+            <div class="form-box">
+                <center><h1>Welcome !</h1></center>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <input type="button" class="toggle-btn" value="Log In" onclick="login()">
+                    <input type="button" class="toggle-btn" value="Register" onclick="Register()">
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="blank"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
+                    <a href="https://twitter.com/?lang=en" target="blank"><img src="https://seeklogo.com/images/T/twitter-icon-circle-blue-logo-0902F48837-seeklogo.com.png"></a>
+                    <a href="https://www.google.com/" target="blank"><img src="https://tehnoblog.org/wp-content/uploads/2021/06/Google-Logo.png"></a>
+                    <a href="https://www.instagram.com/?hl=en" target="blank"><img src="https://pngfree.io/upload/cache/upload/imgs/lovepikHome/instagram-icon-instagram-logo-f350x650.png"></a>
+                </div>
+                <form class="input-group" id="login" action="home.html" method="POST" name="form1" onsubmit="return details() && signin()">
+                    <input type="text" class="input-field" placeholder="Username" required pattern="[a-zA-Z]{3,}" name="user" id="username">
+                    <input type="password" class="input-field" placeholder="Enter Password" required pattern="[0-9a-zA-Z@]{6,}" name="pass" id="password"><br><br>
+                    <p>Forgot Password ?<a href="forgot password.html">Click Here</a></p><br>
+                    <a href="home.html"><input type="button" value="Log in as guest" class="submit-btn"></a><br>
+                    <input type="submit" class="submit-btn" value="Log in">
+                </form>
+                <form class="input-group" id="Register" action="register.html" method="POST" onsubmit="return validpassword() && validemail() && valid() && redirect()" name="myform">
+                    <input type="text" class="input-field" placeholder="Username" required pattern="[a-zA-Z]{3,}" id="u1" name="user1">
+                    <input type="email" class="input-field" placeholder="Enter Your Email" required name="email1">
+                    <input type="password" class="input-field" placeholder="Enter Password" required pattern="[0-9a-zA-Z@]{6,}" id="p1" name="pass1"> 
+                    <input type="password" class="input-field" placeholder="Confirm Password" required pattern="[0-9a-zA-Z@]{6,}" name="pass2"> 
+                    <input type="checkbox" class="check-box" required>I agree to the terms and conditions
+                    <input type="submit" class="submit-btn" value="Register" onclick="signup()">
+                </form>
+            </div>
+        </div>
+        <script>
+            var x=document.getElementById("login");
+            var y=document.getElementById("Register");
+            var z=document.getElementById("btn");
+            function Register(){
+                x.style.left="-400px";
+                y.style.left="50px";
+                z.style.left="110px";
+            }
+            function login(){
+                x.style.left="50px";
+                y.style.left="450px";
+                z.style.left="0px";
+            }
+        </script>
+        <script>
+            function validpassword()
+            {
+                var password=document.myform.pass1.value;
+                var cpassword=document.myform.pass2.value;
+
+                if(password.length<6)
+                {
+                    alert("Password must contain six letters");
+                    return false;
+                }
+
+                if(password==cpassword)
+                {
+                    return true;
+                }
+                else 
+                {
+                    alert("Password and confirm password must be same.");
+                    return false;
+                }
+            }
+            function validemail()
+                {
+                    var email2=document.myform.email1.value;
+                    var atposition=email2.indexOf("@");
+                    var dotposition=email2.lastIndexOf(".");
+                    if(atposition<1 || dotposition< atposition+2 || dotposition+2>=email2.length)
+                    {
+                        alert("please provide valid email");
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            function valid()
+            {
+                var userid=document.myform.user1.value;
+                var passwordid=document.myform.pass1.value;
+                if(userid==passwordid)
+                {
+                    alert("Username and password must be different");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            function details()
+            {
+                var userid=document.form1.user.value;
+                var passwordid=document.form1.pass.value;
+                if(userid==passwordid)
+                {
+                    alert("Username and password must be different");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            function signup()
+            {
+                var ruser=document.getElementById("u1").value;
+                var rpass=document.getElementById("p1").value;
+                var userinfo={"ruser":ruser,"rpass":rpass}
+                console.log(userinfo)
+                var users=localStorage.getItem("users")
+                var info=JSON.parse(users||"[]")
+                info.push(userinfo)
+                localStorage.setItem("users",JSON.stringify(info))
+                /*
+                localStorage.setItem("u","")
+                localStorage.setItem("u",ruser)
+                localStorage.setItem("p","")
+                localStorage.setItem("p",rpass)*/
+            }
+            function redirect()
+            {
+                return true;
+            }
+            function signin()
+            {
+
+                username= document.getElementById("username").value
+
+                password= document.getElementById("password").value
+
+                var users=localStorage.getItem("users")
+
+                var user=JSON.parse(users||"[]")
+
+                localStorage.setItem("currentUser","")
+
+                var check = false
+
+                for(i=0;i<user.length;i++)
+
+                    {
+
+                        if (user[i].username===ruser && user[i].password===rpass)
+                        {
+
+                        localStorage.setItem("currentUser",username)
+
+                        localStorage.setItem("currentName",user[i].name)
+
+                        check = true
+
+                        return true
+
+                        }
+
+                    }
+
+                    if (check == false)
+                    {
+
+                        localStorage.setItem("currentUser","")
+
+                        alert("Invalid Credentials")
+
+                        return false
+                    }
+            }
+        </script>
+    </body>
+</html>
